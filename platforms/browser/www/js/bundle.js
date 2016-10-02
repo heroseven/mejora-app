@@ -11926,10 +11926,10 @@ module.exports = Vue;
 }).call(this,require('_process'))
 },{"_process":1}],5:[function(require,module,exports){
 var Vue = require('vue');
-var modulo= require('./modulo.js');
+//var modulo= require('./modulo.js');
 var VueResource = require('vue-resource');
 var RandomWord = require('./random-word.vue')
-console.log(modulo(5));
+//console.log(modulo(5));
 
 Vue.use(VueResource);
 
@@ -11939,13 +11939,7 @@ var vm = new Vue({
         'random-word': RandomWord
     }
 });
-},{"./modulo.js":6,"./random-word.vue":7,"vue":4,"vue-resource":3}],6:[function(require,module,exports){
-
-console.log('foo line 1');
-
-module.exports = function (n) { return n * 111 }
-
-},{}],7:[function(require,module,exports){
+},{"./random-word.vue":6,"vue":4,"vue-resource":3}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
