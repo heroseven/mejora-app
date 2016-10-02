@@ -35,6 +35,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -45,6 +46,27 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    setupVue: function() {
+        var vm = new Vue({
+            el: "#vue-instance",
+            data: {
+                randomWord: '',
+                words: [
+                    'formidable',
+                    'gracious',
+                    'daft',
+                    'mundane',
+                    'onomatopoeia'
+                ]
+            },
+            methods: {
+                getRandomWord: function() {
+                    var randomIndex = Math.floor(Math.random() * this.words.length);
+                    this.randomWord = this.words[randomIndex];
+                }
+            }
+        });
     }
 };
 
