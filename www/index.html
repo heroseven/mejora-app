@@ -36,18 +36,11 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div id="vue-instance" class="app">
-            <h1>Random Word</h1>
-            <button id="btn-get-random-word" @click="getRandomWord">Get Random Word</button>
-            <p>{{ randomWord }}</p>
-        </div>
+        <random-word></random-word>
 
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
-        </div>
+        <script src="js/bundle.js"></script>
+        <script>var hello=modulo(4);</script>
         <script type="text/javascript" src="cordova.js"></script>
-        <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
