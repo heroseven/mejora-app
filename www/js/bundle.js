@@ -11933,10 +11933,24 @@ var RandomWord = require('./random-word.vue')
 
 Vue.use(VueResource);
 
+
 var vm = new Vue({
     el: 'body',
     components: {
         'random-word': RandomWord
+    },
+    methods:{
+        mostrar: function(){
+            console.log('Hello world!');
+        }
+    }
+
+});
+
+document.addEventListener('init', function(event) {
+    // event.target is the <ons-page> element
+    if (event.target.matches('#page1')) {
+        ons.notification.alert('Page 1 is initiated.');
     }
 });
 },{"./random-word.vue":6,"vue":4,"vue-resource":3}],6:[function(require,module,exports){
@@ -11964,7 +11978,7 @@ exports.default = {
     }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"app\">\n  <h1>Random Word</h1>\n  <button id=\"btn-get-random-word\" @click=\"getRandomWord\">Get Random Word</button>\n  <p>{{randomWord}}</p>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div>\n  <h1>Random Word</h1>\n  <button id=\"btn-get-random-word\" @click=\"getRandomWord\">Get Random Word</button>\n\n\n  <ons-page>\n  <ons-toolbar>\n    <div class=\"center\">My app3\n    </div>\n  </ons-toolbar>\n\n  <p style=\"text-align: center\">\n    <button id=\"btn-get-random-word\" @click=\"getRandomWord\">Get Random Word</button>\n    <ons-button onclick=\"ons.notification.alert('Hello world!')\">Click me!</ons-button>\n    <ons-button @click=\"mostrar\">Click me2!</ons-button>\n    <button @click=\"mostrar\">hola</button>\n    </p><p>{{randomWord}}</p>\n  <p></p>\n</ons-page>\n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

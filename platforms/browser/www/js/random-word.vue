@@ -1,8 +1,23 @@
 <template>
-  <div class="app">
+  <div>
     <h1>Random Word</h1>
     <button id="btn-get-random-word" @click="getRandomWord">Get Random Word</button>
-    <p>{{randomWord}}</p>
+
+
+    <ons-page>
+    <ons-toolbar>
+      <div class="center">My app3
+      </div>
+    </ons-toolbar>
+
+    <p style="text-align: center">
+      <button id="btn-get-random-word" @click="getRandomWord">Get Random Word</button>
+      <ons-button onclick="ons.notification.alert('Hello world!')">Click me!</ons-button>
+      <ons-button @click="mostrar">Click me2!</ons-button>
+      <button @click="mostrar">hola</button>
+      <p>{{randomWord}}</p>
+    </p>
+  </ons-page>
   </div>
 </template>
 
